@@ -1,0 +1,8 @@
+1️⃣ Calculator
+2️⃣ To-Do List
+3️⃣ Jokes API App
+4️⃣ Weather App
+5️⃣ Expense Tracker
+6️⃣ Notes App
+7️⃣ Authentication App
+8️⃣ Real-Time Search + Notes + Analytics Dashboard App (Advanced JS Project)
