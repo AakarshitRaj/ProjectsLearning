@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Notes App</h1>
+
+      <input
+        type="text"
+        id="inputnote"
+        style="height: 44px; width: 250px;"
+        placeholder="Enter your note..."
+      />
+      <button id="addnote">Add Note</button>
+
+      <br /><br />
+
+      <div>
+        <input type="text" id="search" placeholder="Search notes..." />
+        <button id="searchbtn">Search</button>
+
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="short">Short (&lt;20 chars)</option>
+          <option value="long">Long (&gt;20 chars)</option>
+        </select>
+      </div>
+
+      <ul id="noteslist"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
