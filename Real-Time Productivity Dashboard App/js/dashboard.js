@@ -1,5 +1,5 @@
 import {checkAuth,logout} from './storage.js';
-
+import "./notes.js";
 checkAuth();
 
 const user = localStorage.getItem('user');
