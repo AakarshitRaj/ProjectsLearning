@@ -6,8 +6,6 @@ export default function Weather() {
   const navigate = useNavigate();
   function logout() {
     localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    setLoggedInUser(null);
     navigate("/login");
    return  <Layout logout={logout} />;
   }

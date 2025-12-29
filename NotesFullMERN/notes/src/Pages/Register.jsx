@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 export default function Register() {
   const [form, setForm] = useState({
     username: "",
@@ -15,13 +15,14 @@ export default function Register() {
 
     setLoading(true); // disable multiple clicks
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
       const data = await res.json();
+      console.log(data)
 
       if (!res.ok) {
         alert(data.message || "Registration failed");

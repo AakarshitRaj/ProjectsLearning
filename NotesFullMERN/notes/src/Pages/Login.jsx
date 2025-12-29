@@ -1,7 +1,6 @@
-import { set } from "mongoose";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 export default function Login() {
   // const [username,setUsername]=useState('');
   // const [password,setPassword]=useState('');
@@ -16,7 +15,7 @@ export default function Login() {
     const username = localStorage.getItem("username");
 
     if (token && username) {
-      setLoggedInUser(JSON.parse(username));
+      setLoggedInUser(username);
     }
   }, []);
 
@@ -27,7 +26,7 @@ export default function Login() {
 
     try {
       //send the login request to server
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,11 +49,6 @@ export default function Login() {
     } catch (err) {
       console.error("Error during login:", err);
       alert("An error occurred during login. Please try again later.");
-    }
-
-    if (!usernameg || !passwordg) {
-      alert("No user found. Please register first.");
-      return;
     }
   }
   function logout() {
